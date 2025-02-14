@@ -1,6 +1,18 @@
 @GenshinFan_HostAddress = http://localhost:5037
 
-GET {{GenshinFan_HostAddress}}/weatherforecast/
+### Obtener todos los elementos
+GET {{GenshinFan_HostAddress}}/api/elemento
 Accept: application/json
 
 ###
+
+### Crear un nuevo elemento
+POST {{GenshinFan_HostAddress}}/api/elemento
+Content-Type: application/json
+
+{
+  "descripcion": "Fuego"
+}
+
+###
+
