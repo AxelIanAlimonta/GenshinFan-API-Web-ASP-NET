@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GenshinFan.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/[controller]s")]
 [ApiController]
 public class ElementoController : ControllerBase
 {
