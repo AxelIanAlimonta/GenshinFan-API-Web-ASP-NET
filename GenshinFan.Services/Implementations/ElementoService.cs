@@ -18,7 +18,7 @@ namespace GenshinFan.Services.Implementations
             return await _context.Elementos.ToListAsync();
         }
 
-        public async Task<Elemento> Get(int id)
+        public async Task<Elemento?> Get(int id)
         {
             return await _context.Elementos.FindAsync(id);
         }
@@ -37,7 +37,7 @@ namespace GenshinFan.Services.Implementations
             return elemento;
         }
 
-        public async Task<Elemento> Delete(int id)
+        public async Task<Elemento?> Delete(int id)
         {
             var elemento = await _context.Elementos.FindAsync(id);
             if (elemento != null)

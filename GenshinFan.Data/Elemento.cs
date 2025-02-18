@@ -14,5 +14,7 @@ public class Elemento
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     public required string Descripcion { get; set; }
+    //img url
+    public string? ImagenURL { get; set; }
 
 }

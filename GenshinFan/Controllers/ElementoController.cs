@@ -78,10 +78,8 @@ public class ElementoController : ControllerBase
     {
         try
         {
-            if (id != elemento.Id)
-            {
-                return BadRequest("ID del elemento no coincide");
-            }
+            // Asegúrate de que el ID en la URL se asigna al objeto Elemento
+            elemento.Id = id;
 
             var updatedElemento = await _elementoService.Update(elemento);
             if (updatedElemento == null)

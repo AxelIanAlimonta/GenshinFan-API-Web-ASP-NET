@@ -10,8 +10,8 @@ namespace GenshinFan.Services.Interfaces;
 public interface IElementoService
 {
     Task<IEnumerable<Elemento>> GetAll();
-    Task<Elemento> Get(int id);
+    Task<Elemento?> Get(int id);
     Task<Elemento> Add(Elemento elemento);
     Task<Elemento> Update(Elemento elemento);
-    Task<Elemento> Delete(int id);
+    Task<Elemento?> Delete(int id);
 }
