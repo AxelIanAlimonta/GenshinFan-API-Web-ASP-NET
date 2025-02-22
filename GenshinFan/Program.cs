@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<GenshinImpactContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IElementoService, ElementoService>();
+builder.Services.AddScoped<IRegionService, RegionService>();
+builder.Services.AddScoped<ITipoDeArmaService, TipoDeArmaService>();
 
 // Configurar CORS
 builder.Services.AddCors(options =>
