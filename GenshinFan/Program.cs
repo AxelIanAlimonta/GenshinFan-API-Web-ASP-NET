@@ -16,6 +16,7 @@ builder.Services.AddDbContext<GenshinImpactContext>(options =>
 builder.Services.AddScoped<IElementoService, ElementoService>();
 builder.Services.AddScoped<IRegionService, RegionService>();
 builder.Services.AddScoped<ITipoDeArmaService, TipoDeArmaService>();
+builder.Services.AddScoped<IPersonajeService, PersonajeService>();
 
 // Configurar CORS
 builder.Services.AddCors(options =>

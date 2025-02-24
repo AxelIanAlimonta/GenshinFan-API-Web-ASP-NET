@@ -16,4 +16,6 @@ public class Region
     [Required]
     public required string Descripcion { get; set; }
     public string? ImagenURL { get; set; }
+
+    public List<Personaje>? Personajes { get; set; }
 }
