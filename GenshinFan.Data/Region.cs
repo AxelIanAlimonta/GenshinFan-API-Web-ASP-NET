@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace GenshinFan.Data;
@@ -17,5 +18,6 @@ public class Region
     public required string Descripcion { get; set; }
     public string? ImagenURL { get; set; }
 
+    [JsonIgnore]
     public List<Personaje>? Personajes { get; set; }
 }

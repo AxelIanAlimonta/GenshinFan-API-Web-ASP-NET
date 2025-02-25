@@ -11,9 +11,11 @@ public class PersonajeController : ControllerBase
 {
     private readonly IPersonajeService _personajeService;
 
+
     public PersonajeController(IPersonajeService personajeService)
     {
         _personajeService = personajeService;
+
     }
 
     [HttpGet]
@@ -42,6 +44,7 @@ public class PersonajeController : ControllerBase
         {
             return BadRequest("Datos del personaje inválidos");
         }
+
 
         var nuevoPersonaje = await _personajeService.Add(personaje);
         return CreatedAtAction(nameof(Get), new { id = nuevoPersonaje.Id }, nuevoPersonaje);

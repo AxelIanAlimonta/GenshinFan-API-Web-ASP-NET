@@ -24,7 +24,7 @@ public class PersonajeService : IPersonajeService
         return await _context.Personajes.ToListAsync();
     }
 
-    public async Task<Personaje> Get(int id)
+    public async Task<Personaje?> Get(int id)
     {
         var personaje = await _context.Personajes.FindAsync(id);
         if (personaje == null)
@@ -36,6 +36,7 @@ public class PersonajeService : IPersonajeService
 
     public async Task<Personaje> Add(Personaje personaje)
     {
+
         _context.Personajes.Add(personaje);
         await _context.SaveChangesAsync();
         return personaje;
