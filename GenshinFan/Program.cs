@@ -17,6 +17,8 @@ builder.Services.AddScoped<IElementoService, ElementoService>();
 builder.Services.AddScoped<IRegionService, RegionService>();
 builder.Services.AddScoped<ITipoDeArmaService, TipoDeArmaService>();
 builder.Services.AddScoped<IPersonajeService, PersonajeService>();
+builder.Services.AddScoped<IArmaService, ArmaService>();
+builder.Services.AddScoped<IPersonajeArmaRecomendada, PersonajeArmaRecomendadaService>();
 
 // Configurar CORS
 builder.Services.AddCors(options =>

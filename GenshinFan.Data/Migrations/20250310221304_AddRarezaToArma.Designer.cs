@@ -3,6 +3,7 @@ using GenshinFan.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GenshinFan.Data.Migrations
 {
     [DbContext(typeof(GenshinImpactContext))]
-    partial class GenshinImpactContextModelSnapshot : ModelSnapshot
+    [Migration("20250310221304_AddRarezaToArma")]
+    partial class AddRarezaToArma
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -116,23 +119,6 @@ namespace GenshinFan.Data.Migrations
                     b.ToTable("Personaje", (string)null);
                 });
 
-            modelBuilder.Entity("GenshinFan.Data.PersonajeArmaRecomendada", b =>
-                {
-                    b.Property<int>("PersonajeId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(0);
-
-                    b.Property<int>("ArmaId")
-                        .HasColumnType("int")
-                        .HasColumnOrder(1);
-
-                    b.HasKey("PersonajeId", "ArmaId");
-
-                    b.HasIndex("ArmaId");
-
-                    b.ToTable("PersonajeArmaRecomendada", (string)null);
-                });
-
             modelBuilder.Entity("GenshinFan.Data.Region", b =>
                 {
                     b.Property<int>("Id")
@@ -192,21 +178,6 @@ namespace GenshinFan.Data.Migrations
                     b.Navigation("Region");
 
                     b.Navigation("TipoDeArma");
-                });
-
-            modelBuilder.Entity("GenshinFan.Data.PersonajeArmaRecomendada", b =>
-                {
-                    b.HasOne("GenshinFan.Data.Arma", null)
-                        .WithMany()
-                        .HasForeignKey("ArmaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("GenshinFan.Data.Personaje", null)
-                        .WithMany()
-                        .HasForeignKey("PersonajeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("GenshinFan.Data.Elemento", b =>
