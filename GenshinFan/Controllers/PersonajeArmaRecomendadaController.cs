@@ -60,7 +60,7 @@ namespace GenshinFan.Controllers
         public async Task<ActionResult<PersonajeArmaRecomendada>> AddAsync(PersonajeArmaRecomendada personajeArmaRecomendada)
         {
             var result = await _personajeArmaRecomendadaService.AddAsync(personajeArmaRecomendada);
-            return CreatedAtAction(nameof(GetByArmaIdAndPersonajeIdAsync), new { personajeId = result.PersonajeId, armaId = result.ArmaId }, result);
+            return Created($"api/personaje/{result.PersonajeId}/arma/{result.ArmaId}", result);
         }
 
         [HttpDelete("personaje/{personajeId}/arma/{armaId}")]
