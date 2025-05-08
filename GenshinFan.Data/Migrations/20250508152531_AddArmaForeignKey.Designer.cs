@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GenshinFan.Data.Migrations
 {
     [DbContext(typeof(GenshinImpactContext))]
-    [Migration("20250312202204_AddPersonajeArmaRecomendada")]
-    partial class AddPersonajeArmaRecomendada
+    [Migration("20250508152531_AddArmaForeignKey")]
+    partial class AddArmaForeignKey
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -44,7 +44,12 @@ namespace GenshinFan.Data.Migrations
                     b.Property<int?>("Rareza")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TipoDeArmaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TipoDeArmaId");
 
                     b.ToTable("Armas", (string)null);
                 });
@@ -174,6 +179,15 @@ namespace GenshinFan.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TipoDeArma", (string)null);
+                });
+
+            modelBuilder.Entity("GenshinFan.Data.Arma", b =>
+                {
+                    b.HasOne("GenshinFan.Data.TipoDeArma", "TipoDeArma")
+                        .WithMany()
+                        .HasForeignKey("TipoDeArmaId");
+
+                    b.Navigation("TipoDeArma");
                 });
 
             modelBuilder.Entity("GenshinFan.Data.Personaje", b =>

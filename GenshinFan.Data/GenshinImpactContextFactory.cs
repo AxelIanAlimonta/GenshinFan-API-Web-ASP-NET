@@ -9,7 +9,7 @@ namespace GenshinFan.Data
         {
             var optionsBuilder = new DbContextOptionsBuilder<GenshinImpactContext>();
 
-            var connectionString = "Server=DESKTOP-MKO3DG2\\SQLEXPRESS;Database=GenshinFan;Trusted_Connection=True;TrustServerCertificate=True;";
+            var connectionString = "Server=DESKTOP-QNEBL5O\\SQLEXPRESS;Database=GenshinFan;Trusted_Connection=True;TrustServerCertificate=True;";
             optionsBuilder.UseSqlServer(connectionString);
 
             return new GenshinImpactContext(optionsBuilder.Options);

@@ -57,5 +57,10 @@ public class GenshinImpactContext : DbContext
             .HasOne<Arma>()
             .WithMany()
             .HasForeignKey(par => par.ArmaId);
+
+        modelBuilder.Entity<Arma>()
+            .HasOne(a => a.TipoDeArma)
+            .WithMany()
+            .HasForeignKey(a => a.TipoDeArmaId);
     }
 }

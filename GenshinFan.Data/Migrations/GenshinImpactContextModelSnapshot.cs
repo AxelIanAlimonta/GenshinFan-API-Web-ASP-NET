@@ -41,7 +41,12 @@ namespace GenshinFan.Data.Migrations
                     b.Property<int?>("Rareza")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TipoDeArmaId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("TipoDeArmaId");
 
                     b.ToTable("Armas", (string)null);
                 });
@@ -171,6 +176,15 @@ namespace GenshinFan.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("TipoDeArma", (string)null);
+                });
+
+            modelBuilder.Entity("GenshinFan.Data.Arma", b =>
+                {
+                    b.HasOne("GenshinFan.Data.TipoDeArma", "TipoDeArma")
+                        .WithMany()
+                        .HasForeignKey("TipoDeArmaId");
+
+                    b.Navigation("TipoDeArma");
                 });
 
             modelBuilder.Entity("GenshinFan.Data.Personaje", b =>

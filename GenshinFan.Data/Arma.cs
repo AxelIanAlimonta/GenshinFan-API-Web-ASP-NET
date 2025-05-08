@@ -18,6 +18,12 @@ public class Arma
 
     public int? Rareza { get; set; }
 
+    [ForeignKey("TipoDeArmaId")]
+    public int? TipoDeArmaId { get; set; }
+
     public string? ImagenURL { get; set; }
+
+    [JsonIgnore]
+    public TipoDeArma? TipoDeArma { get; set; }
 
 }
