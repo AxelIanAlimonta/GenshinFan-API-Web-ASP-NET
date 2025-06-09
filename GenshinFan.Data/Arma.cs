@@ -12,7 +12,7 @@ public class Arma
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
 
-    public string? Descripcion { get; set; }
+    public string? Nombre { get; set; }
 
     public int? AtaqueBase { get; set; }
 
