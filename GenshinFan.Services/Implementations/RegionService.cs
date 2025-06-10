@@ -55,7 +55,7 @@ public class RegionService : IRegionService
         }
 
         // Actualizar las propiedades de la entidad existente
-        existingRegion.Descripcion = region.Descripcion;
+        existingRegion.Nombre = region.Nombre;
         existingRegion.ImagenURL = region.ImagenURL;
 
         await _context.SaveChangesAsync();

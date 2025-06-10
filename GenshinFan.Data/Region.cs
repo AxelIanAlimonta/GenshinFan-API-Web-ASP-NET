@@ -15,7 +15,7 @@ public class Region
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
     [Required]
-    public required string Descripcion { get; set; }
+    public required string Nombre { get; set; }
     public string? ImagenURL { get; set; }
 
     [JsonIgnore]
