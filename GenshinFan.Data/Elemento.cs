@@ -14,7 +14,7 @@ public class Elemento
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
     public int Id { get; set; }
-    public required string Descripcion { get; set; }
+    public required string Nombre { get; set; }
     public string? ImagenURL { get; set; }
 
     [JsonIgnore]
